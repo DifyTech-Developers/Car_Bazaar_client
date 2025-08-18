@@ -1,0 +1,402 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  background: #181818;
+  width: 100%;
+  max-width: 950px;
+  min-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  animation: modalSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.closeButton:hover {
+  background: #e50914;
+  border-color: #e50914;
+  transform: scale(1.1);
+}
+
+/* justify-content: center;
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+} */
+
+.closeButton:hover {
+  background: var(--accent-red);
+  transform: scale(1.1);
+}
+
+.modalContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+  height: auto;
+}
+
+.imageSection {
+  position: relative;
+  background: var(--primary-bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.imageContainer {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.navButton:hover {
+  background: var(--accent-red);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: 1rem;
+}
+
+.nextButton {
+  right: 1rem;
+}
+
+.imageIndicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: var(--accent-red);
+  transform: scale(1.2);
+}
+
+.thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--card-bg);
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 60px;
+  height: 40px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail.activeThumbnail {
+  border-color: var(--accent-red);
+}
+
+.thumbnail:hover {
+  border-color: var(--text-secondary);
+}
+
+.detailsSection {
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 400px;
+}
+
+.header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.vehicleName {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  font-family: var(--font-label);
+}
+
+.basicInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.infoLabel {
+  font-family: var(--font-label);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.infoValue {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.specsSection {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.specsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+.specLabel {
+  font-family: var(--font-label);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.specValue {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.bookButton {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: var(--accent-red);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bookButton:hover {
+  background: var(--accent-red-hover);
+  transform: translateY(-2px);
+}
+
+.contactButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  border-radius: 8px;
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactButton:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+  .modal {
+    min-width: auto;
+    min-height: auto;
+  }
+
+  .modalContent {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: 90vh;
+    min-height: auto;
+  }
+
+  .imageSection {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .detailsSection {
+    height: auto;
+    max-height: 40vh;
+    min-width: auto;
+  }
+
+  .basicInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .modalOverlay {
+    padding: 1rem;
+  }
+
+  .modal {
+    border-radius: 12px;
+  }
+
+  .detailsSection {
+    padding: 1.5rem;
+  }
+
+  .vehicleName {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .thumbnails {
+    padding: 0.5rem;
+  }
+}

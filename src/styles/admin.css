@@ -1,0 +1,198 @@
+/* Admin Dashboard Layout */
+.admin-dashboard-wrapper {
+  padding-top: 6rem;
+  /* pt-24 (adjust based on navbar height) */
+  padding-bottom: 3rem;
+  /* pb-12 */
+  background-color: var(--color-section-bg);
+  min-height: 100vh;
+}
+
+.admin-dashboard-container {
+  max-width: var(--breakpoint-2xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: var(--breakpoint-sm)) {
+  .admin-dashboard-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+  .admin-dashboard-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.admin-dashboard-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Top Section */
+.admin-top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: var(--breakpoint-sm)) {
+  .admin-top-section {
+    flex-direction: row;
+  }
+}
+
+.admin-search-bar-wrapper {
+  width: 100%;
+}
+
+@media (min-width: var(--breakpoint-sm)) {
+  .admin-search-bar-wrapper {
+    width: 50%;
+  }
+}
+
+.admin-add-vehicle-button {
+  background-color: var(--color-netflix-red);
+  color: var(--color-text-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.admin-add-vehicle-button:hover {
+  background-color: var(--color-deep-crimson);
+}
+
+.admin-add-vehicle-button .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Vehicles Table */
+.vehicles-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border-color);
+}
+
+.vehicles-table {
+  width: 100%;
+  /* Changed from min-w-full to width: 100% as min-w-full is Tailwind-specific */
+  border-collapse: collapse;
+}
+
+.vehicles-table thead {
+  background-color: var(--color-table-header-bg);
+}
+
+.vehicles-table th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: "Poppins", sans-serif;
+  border-bottom: 1px solid var(--color-border-color);
+}
+
+.vehicles-table tbody {
+  background-color: var(--color-card-bg);
+  /* Apply background to tbody directly */
+}
+
+.vehicles-table td {
+  padding: 1rem 1.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-family: "Inter", sans-serif;
+  border-bottom: 1px solid var(--color-border-color);
+}
+
+.vehicles-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.vehicles-table tbody tr:hover {
+  background-color: rgba(31, 31, 31, 0.8);
+}
+
+.vehicles-table td.name {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.vehicles-table td.price {
+  color: var(--color-netflix-red);
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.vehicles-table td.actions {
+  text-align: center;
+}
+
+.vehicles-table-actions-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.vehicles-table-action-button {
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.vehicles-table-action-button:hover {
+  background-color: var(--color-card-bg);
+}
+
+.vehicles-table-action-button.edit:hover {
+  color: var(--color-netflix-red);
+}
+
+.vehicles-table-action-button.delete:hover {
+  color: var(--color-deep-crimson);
+}
+
+.vehicles-table-action-button .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.vehicles-table-no-results {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+}

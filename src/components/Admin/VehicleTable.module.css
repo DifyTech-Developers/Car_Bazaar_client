@@ -1,0 +1,144 @@
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--section-bg);
+}
+
+.headerRow {
+  background: var(--table-header-bg);
+}
+
+.headerCell {
+  padding: 1rem;
+  text-align: left;
+  font-family: var(--font-label);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.row {
+  transition: background-color 0.2s ease;
+}
+
+.row:hover {
+  background: var(--card-bg);
+}
+
+.cell {
+  padding: 1rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 200px;
+}
+
+.vehicleImage {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.vehicleName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.price {
+  font-weight: 600;
+  color: var(--accent-red);
+  font-family: var(--font-label);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editButton {
+  background: var(--card-bg);
+  color: var(--text-secondary);
+}
+
+.editButton:hover {
+  background: var(--accent-red);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.deleteButton {
+  background: var(--card-bg);
+  color: var(--text-secondary);
+}
+
+.deleteButton:hover {
+  background: #dc2626;
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.emptyState {
+  padding: 3rem;
+  text-align: center;
+}
+
+.emptyText {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .headerCell,
+  .cell {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .nameCell {
+    min-width: 150px;
+  }
+
+  .vehicleImage {
+    width: 32px;
+    height: 32px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .actionButton {
+    width: 28px;
+    height: 28px;
+  }
+}

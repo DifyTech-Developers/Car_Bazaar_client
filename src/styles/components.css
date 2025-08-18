@@ -1,0 +1,185 @@
+/* CarCard styles */
+.car-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.car-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 12rem;
+  overflow: hidden;
+}
+
+.car-card-image {
+  object-fit: cover;
+  transition: transform 0.3s ease-out;
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* Ensure no extra space below image */
+}
+
+.car-card:hover .car-card-image {
+  transform: scale(1.05);
+}
+
+.car-card-content {
+  padding: 1rem;
+}
+
+.car-card-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.car-card-details {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.car-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.car-card-price {
+  color: var(--color-netflix-red);
+  font-weight: 700;
+  font-size: 1.125rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* SearchBar styles */
+.search-bar-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-bar-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.search-bar-input {
+  width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-card-bg);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-color);
+  font-family: "Inter", sans-serif;
+}
+
+.search-bar-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.search-bar-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--color-netflix-red);
+}
+
+/* CustomDropdown styles */
+.custom-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.custom-dropdown-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border-color);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  background-color: var(--color-card-bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.custom-dropdown-button:hover {
+  background-color: var(--color-card-bg);
+  /* Or a slightly lighter shade if desired */
+  color: var(--color-netflix-red);
+}
+
+.custom-dropdown-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--color-netflix-red);
+}
+
+.custom-dropdown-button .icon {
+  margin-left: 0.5rem;
+  margin-right: -0.25rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.custom-dropdown-menu {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 14rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: var(--color-card-bg);
+  z-index: 10;
+  outline: none;
+}
+
+.custom-dropdown-menu-items {
+  padding: 0.25rem 0;
+}
+
+.custom-dropdown-menu-item {
+  color: var(--color-text-primary);
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.custom-dropdown-menu-item:hover,
+.custom-dropdown-menu-item:focus {
+  background-color: var(--color-netflix-red);
+  color: var(--color-text-primary);
+}

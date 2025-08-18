@@ -1,0 +1,392 @@
+/* Common Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Common Modal Container */
+.modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 48rem;
+  /* Will be overridden for AddVehicleModal */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-section-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border-color);
+  animation: zoom-in 0.3s ease-out forwards;
+  overflow: hidden;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-family: "Montserrat", sans-serif;
+}
+
+.modal-close-button {
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  color: var(--color-netflix-red);
+  background-color: var(--color-card-bg);
+}
+
+.modal-close-button .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* CarDetailsModal Specific Styles */
+.car-details-modal-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .car-details-modal-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.car-details-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 16rem;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .car-details-image-wrapper {
+    height: 24rem;
+  }
+}
+
+.car-details-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.car-details-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.car-details-nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.car-details-nav-button.left {
+  left: 0.5rem;
+}
+
+.car-details-nav-button.right {
+  right: 0.5rem;
+}
+
+.car-details-nav-button .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.car-details-price {
+  color: var(--color-netflix-red);
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.car-details-specs-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.car-details-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1rem;
+  /* gap-x-4 gap-y-2 */
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-family: "Inter", sans-serif;
+}
+
+.car-details-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-details-spec-item .label {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+}
+
+.car-details-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .car-details-actions {
+    flex-direction: row;
+  }
+}
+
+.car-details-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.car-details-button.primary {
+  background-color: var(--color-netflix-red);
+  color: var(--color-text-primary);
+}
+
+.car-details-button.primary:hover {
+  background-color: var(--color-deep-crimson);
+}
+
+.car-details-button.secondary {
+  background-color: transparent;
+  border: 1px solid var(--color-border-color);
+  color: var(--color-text-primary);
+}
+
+.car-details-button.secondary:hover {
+  border-color: var(--color-netflix-red);
+  color: var(--color-netflix-red);
+}
+
+/* AddVehicleModal Specific Styles */
+.add-vehicle-modal-container {
+  max-width: 42rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.add-vehicle-modal-header {
+  border-bottom: 1px solid var(--color-border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-vehicle-modal-description {
+  color: var(--color-text-secondary);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.add-vehicle-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .add-vehicle-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.add-vehicle-form-group {
+  /* No specific styling needed for the group div itself */
+}
+
+.add-vehicle-form-group.full-width {
+  grid-column: span 2;
+}
+
+.add-vehicle-label {
+  display: block;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+  font-family: "Inter", sans-serif;
+}
+
+.add-vehicle-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-card-bg);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-color);
+  font-family: "Inter", sans-serif;
+}
+
+.add-vehicle-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--color-netflix-red);
+}
+
+/* Image Upload section */
+.add-vehicle-image-upload-section {
+  grid-column: span 2;
+  margin-top: 1rem;
+}
+
+.add-vehicle-image-upload-label {
+  display: block;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.add-vehicle-image-preview-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.add-vehicle-image-preview-item {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-color);
+}
+
+.add-vehicle-image-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add-vehicle-remove-image-button {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.add-vehicle-remove-image-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.add-vehicle-remove-image-button .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.add-vehicle-add-image-label {
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-border-color);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-vehicle-add-image-label:hover {
+  background-color: rgba(31, 31, 31, 0.5);
+}
+
+.add-vehicle-add-image-label .icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-text-secondary);
+}
+
+/* Modal Actions */
+.modal-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modal-action-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-action-button.cancel {
+  background-color: transparent;
+  border: 1px solid var(--color-text-primary);
+  color: var(--color-text-primary);
+}
+
+.modal-action-button.cancel:hover {
+  border-color: var(--color-netflix-red);
+  color: var(--color-netflix-red);
+}
+
+.modal-action-button.save {
+  background-color: var(--color-netflix-red);
+  color: var(--color-text-primary);
+}
+
+.modal-action-button.save:hover {
+  background-color: var(--color-deep-crimson);
+}
