@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import AdminPage from './pages/AdminPage'
 import CollectionsPage from './pages/CollectionsPage'
 import CarDetailsPage from './pages/CarDetailsPage'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path='/admin' element={<AdminPage />} />
+          <Route path='/admin-gumesh7344961187879740' element={<AdminPage />} />
           <Route path='/collections' element={<CollectionsPage />} />
           <Route path='/car' element={<CarDetailsPage />} />
           <Route path='*' element={<h1>404 Not Found</h1>} />

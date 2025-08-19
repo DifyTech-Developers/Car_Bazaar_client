@@ -37,6 +37,8 @@ export const vehicleService = {
       });
 
       const response = await api.post('/admin/vehicles', formData, {
+        timeout: 30000
+      }, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -32,9 +32,9 @@ export default function AboutUs() {
           <div className={`${styles.textContainer} ${isVisible ? styles.visible : ""}`}>
             <h2 className={styles.title}>About LuxDrive</h2>
             <p className={styles.description}>
-              For over two decades, LuxDrive has been the premier destination for luxury automotive excellence. We
-              curate an exclusive collection of the world's finest vehicles, ensuring each car meets our uncompromising
-              standards of quality, performance, and prestige.
+              At Car Bazaar Pathalgaon, we specialize in the sale and purchase of four-wheeler vehicles.
+              Our showroom, located at Palidih Chowk, Pathalgaon (District Jashpur, Chhattisgarh),
+              provides customers with a seamless car buying and selling experience.
             </p>
             <p className={styles.description}>
               Our commitment extends beyond sales to provide a complete luxury experience. From personalized
@@ -44,11 +44,11 @@ export default function AboutUs() {
 
             <div className={styles.stats}>
               <div className={styles.stat}>
-                <div className={styles.statNumber}>500+</div>
+                <div className={styles.statNumber}>100+</div>
                 <div className={styles.statLabel}>Luxury Vehicles</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statNumber}>20+</div>
+                <div className={styles.statNumber}>10+</div>
                 <div className={styles.statLabel}>Years Experience</div>
               </div>
               <div className={styles.stat}>
