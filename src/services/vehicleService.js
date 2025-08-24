@@ -2,7 +2,7 @@ import api from './api';
 import Papa from "papaparse"; // npm install papaparse
 
 
-const GOOGLE_SHEETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQw-UZfUWBL2C_ZHJF7j4S7ptS1hbpmhzLTDMN_jz-OYwtpQDIip_irK-cLjIGgU8Vubi1812RCI0fV/pub?output=csv'; // Replace with your Google Sheet URL
+const GOOGLE_SHEETS_URL = import.meta.env.VITE_SHEET_URL
 
 // Transform Google Sheets row into vehicle format
 const transformSheetData = (row) => {
