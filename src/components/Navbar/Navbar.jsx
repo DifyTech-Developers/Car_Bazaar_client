@@ -34,8 +34,6 @@ export default function Navbar() {
           <Link to="/collections" className={styles.navLink}>
             Collections
           </Link>
-
-
         </div>
       </div>
     </nav>

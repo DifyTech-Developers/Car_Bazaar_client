@@ -7,6 +7,7 @@ import toast from "react-hot-toast"
 
 export default function LatestCollection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [latestVehicles, setLatestVehicles] = useState([])
 
   // ✅ Fetch vehicles with React Query
   const {
@@ -16,11 +17,17 @@ export default function LatestCollection() {
     error,
   } = useQuery({
     queryKey: ["vehicles"],
-    queryFn: vehicleService.getAllVehicles,
+    queryFn: vehicleService.getVehiclesFromSheets,
   })
 
+  useEffect(() => {
+    console.log(allVehicles);
+    const latestVehicles = allVehicles && allVehicles.length > 4 && allVehicles.slice(0, 6)
+    console.log(latestVehicles);
+    setLatestVehicles(latestVehicles)
+  }, [allVehicles])
+
   // ✅ Latest 4 vehicles
-  const latestVehicles = allVehicles.slice(0, 4)
 
   // ✅ Intersection Observer for animation
   useEffect(() => {

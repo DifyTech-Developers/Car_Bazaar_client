@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.column}>
-            <h3 className={styles.columnTitle}>LuxDrive</h3>
+            <h3 className={styles.columnTitle}>Car Bazaar</h3>
             <p className={styles.description}>
               At Car Bazaar Pathalgaon, we specialize in the sale and purchase of four-wheeler vehicles.
               Our showroom, located at Palidih Chowk, Pathalgaon (District Jashpur, Chhattisgarh),

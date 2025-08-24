@@ -7,15 +7,11 @@ export default function CarCard({ vehicle }) {
   const navigate = useNavigate();
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      maximumFractionDigits: 0,
-    }).format(price);
+    return `₹${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   };
 
   const formatKms = (kms) => {
-    return `${(kms / 1000).toFixed(1)}k kms`;
+    return `${kms}kms`;
   };
 
   const handleCardClick = () => {

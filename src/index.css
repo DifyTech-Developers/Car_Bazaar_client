@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   /* Netflix-inspired Dark Theme Colors */
   --background: #141414;

@@ -24,7 +24,7 @@ export default function VehicleGrid() {
     error,
   } = useQuery({
     queryKey: ["vehicles"],
-    queryFn: vehicleService.getAllVehicles,
+    queryFn: vehicleService.getVehiclesFromSheets,
   })
 
   useEffect(() => {

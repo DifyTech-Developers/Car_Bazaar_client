@@ -1,53 +1,108 @@
 .section {
   padding: 6rem 0;
-  background: var(--primary-bg);
+  position: relative;
+  background: linear-gradient(to bottom, #111827, #000000);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/Hero.jpg') center/cover no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-.imageContainer {
+.featureCard {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 76, 41, 0.1);
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 76, 41, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 76, 41, 0.1);
+}
+
+.socialSection {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 76, 41, 0.1);
+}
+
+.socialSection:hover {
+  border-color: rgba(255, 76, 41, 0.3);
+}
+
+.fadeIn {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: all 1s ease;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-.imageContainer.visible {
-  opacity: 1;
-  transform: translateX(0);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.imageContainer:hover .image {
-  transform: scale(1.02);
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 76, 41, 0.1);
 }
 
-.textContainer {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 1s ease;
+.social-section {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 76, 41, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
-.textContainer.visible {
-  opacity: 1;
-  transform: translateX(0);
+.social-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 76, 41, 0.1) 0%, transparent 50%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .title {

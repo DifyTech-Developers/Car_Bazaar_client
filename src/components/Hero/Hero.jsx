@@ -10,6 +10,13 @@ export default function Hero() {
     setIsVisible(true)
   }, [])
 
+  const handleWhatsApp = () => {
+    const phoneNumber = "917879740513"; // no + sign
+    const message = `Hi, I'm interested in this vehicle`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="home" className={styles.hero}>
       <div className={styles.heroBackground}>
@@ -28,9 +35,9 @@ export default function Hero() {
           <Link to="/collections" className={styles.primaryButton}>
             All Collections
           </Link>
-          <Link to="#contact" className={styles.secondaryButton}>
+          <button onClick={handleWhatsApp} className={styles.secondaryButton}>
             Contact Us
-          </Link>
+          </button>
         </div>
       </div>
     </section>

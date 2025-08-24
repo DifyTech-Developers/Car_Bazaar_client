@@ -11,20 +11,19 @@ const CarDetailsPage = () => {
 
   };
 
-  console.log(car);
 
 
   const handleWhatsApp = () => {
-    // Replace with your WhatsApp number
-    const phoneNumber = "+1234567890";
+    const phoneNumber = "917879740513"; // no + sign
     const message = `Hi, I'm interested in ${car.name}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
-
-  const handleBookNow = () => {
-    // Implement your booking logic here
-    console.log('Book Now clicked');
+  const handleBookNow = (car) => {
+    const phoneNumber = "917879740513"; // no + sign
+    const message = `Hi, I'm interested in ${car.name}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -59,11 +58,7 @@ const CarDetailsPage = () => {
         <div className={styles.details}>
           <h1 className={styles.title}>{car.make} {car.model}</h1>
           <div className={styles.price}>
-            {new Intl.NumberFormat("en-IN", {
-              style: "currency",
-              currency: "INR",
-              maximumFractionDigits: 0
-            }).format(car.price)}
+            {`₹${car.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`}
           </div>
 
           <div className={styles.specifications}>
@@ -73,7 +68,7 @@ const CarDetailsPage = () => {
             </div>
             <div className={styles.specItem}>
               <span className={styles.label}>Driven</span>
-              <span className={styles.value}>{(car.drivens / 1000).toFixed(1)}k kms</span>
+              <span className={styles.value}>{car.drivens}k kms</span>
             </div>
             <div className={styles.specItem}>
               <span className={styles.label}>Ownership</span>
