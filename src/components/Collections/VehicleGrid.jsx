@@ -59,15 +59,17 @@ export default function VehicleGrid() {
 
     if (filters.priceRange) {
       filtered = filtered.filter((vehicle) => {
-        const price = vehicle.price
+        let price = vehicle.price
+        price = price.split(",").join("");
+        price = parseInt(price);
         switch (filters.priceRange) {
-          case "Under $200k":
+          case "Under ₹200k":
             return price < 200000
-          case "$200k - $300k":
+          case "₹200k - ₹300k":
             return price >= 200000 && price <= 300000
-          case "$300k - $400k":
+          case "₹300k - ₹400k":
             return price >= 300000 && price <= 400000
-          case "Above $400k":
+          case "Above ₹400k":
             return price > 400000
           default:
             return true

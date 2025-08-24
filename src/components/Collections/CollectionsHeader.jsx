@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import { Search, Filter, ChevronDown } from "lucide-react"
 import styles from "./CollectionsHeader.module.css"
-import { vehicleService } from "../../services/vehicleService"
 
-export default function CollectionsHeader({ onSearch, onFilter, filters, searchTerm }) {
+export default function CollectionsHeader({ onSearch, onFilter, searchTerm }) {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [activeFilters, setActiveFilters] = useState({
     make: "",
@@ -12,10 +11,10 @@ export default function CollectionsHeader({ onSearch, onFilter, filters, searchT
     fuelType: "",
   })
 
-  const makes = ["All", "Lamborghini", "Ferrari", "Porsche", "McLaren"]
-  const years = ["All", "2023", "2022", "2021", "2020"]
-  const priceRanges = ["All", "Under $200k", "$200k - $300k", "$300k - $400k", "Above $400k"]
-  const fuelTypes = ["All", "Petrol", "Electric", "Hybrid"]
+  // const makes = ["All", "Lamborghini", "Ferrari", "Porsche", "McLaren"]
+  // const years = ["All", "2023", "2022", "2021", "2020"]
+  const priceRanges = ["All", "Under ₹200k", "₹200k - ₹300k", "₹300k - ₹400k", "Above ₹400k"]
+  const fuelTypes = ["All", "Petrol", "Electric", "Diesel", "Hybrid"]
 
   const handleFilterChange = (filterType, value) => {
     const newFilters = { ...activeFilters, [filterType]: value }
@@ -68,36 +67,6 @@ export default function CollectionsHeader({ onSearch, onFilter, filters, searchT
             {isFilterOpen && (
               <div className={styles.filterDropdown}>
                 <div className={styles.filterGrid}>
-                  <div className={styles.filterGroup}>
-                    <label className={styles.filterLabel}>Make</label>
-                    <select
-                      className={styles.filterSelect}
-                      value={activeFilters.make}
-                      onChange={(e) => handleFilterChange("make", e.target.value)}
-                    >
-                      {makes.map((make) => (
-                        <option key={make} value={make === "All" ? "" : make}>
-                          {make}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className={styles.filterGroup}>
-                    <label className={styles.filterLabel}>Year</label>
-                    <select
-                      className={styles.filterSelect}
-                      value={activeFilters.year}
-                      onChange={(e) => handleFilterChange("year", e.target.value)}
-                    >
-                      {years.map((year) => (
-                        <option key={year} value={year === "All" ? "" : year}>
-                          {year}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
                   <div className={styles.filterGroup}>
                     <label className={styles.filterLabel}>Price Range</label>
                     <select
