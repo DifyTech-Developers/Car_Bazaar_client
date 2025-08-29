@@ -14,13 +14,13 @@ const CarDetailsPage = () => {
 
 
   const handleWhatsApp = () => {
-    const phoneNumber = "917879740513"; // no + sign
+    const phoneNumber = "919343157516"; // no + sign
     const message = `Hi, I'm interested in ${car.name}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
   const handleBookNow = (car) => {
-    const phoneNumber = "917879740513"; // no + sign
+    const phoneNumber = "919343157516"; // no + sign
     const message = `Hi, I'm interested in ${car.name}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

@@ -11,7 +11,7 @@ export default function Hero() {
   }, [])
 
   const handleWhatsApp = () => {
-    const phoneNumber = "917879740513"; // no + sign
+    const phoneNumber = "919343157516"; // no + sign
     const message = `Hi, I'm interested in this vehicle`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
