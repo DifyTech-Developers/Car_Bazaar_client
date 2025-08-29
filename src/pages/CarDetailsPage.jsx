@@ -68,7 +68,7 @@ const CarDetailsPage = () => {
             </div>
             <div className={styles.specItem}>
               <span className={styles.label}>Driven</span>
-              <span className={styles.value}>{car.drivens}k kms</span>
+              <span className={styles.value}>{car.drivens} kms</span>
             </div>
             <div className={styles.specItem}>
               <span className={styles.label}>Ownership</span>
